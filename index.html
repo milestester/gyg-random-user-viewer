@@ -4,11 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GYG Random User Viewer</title>
+  <link href="https://fonts.googleapis.com/css?family=Galada|Lato" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="js/lib/angular.min.js" type="text/javascript"></script>
+  <script src="js/lib/spin.min.js"></script>
+  <script src="js/lib/angular-spinner.min.js"></script>
+  <script src="js/lib/angular-loading-spinner.js"></script>
   <script src="js/app.js" type="text/javascript"></script>
 </head>
-<body ng-controller="gygController">
-  <h1> {{ title }} </h1>
+<body ng-controller="viewerController">
+  <div class="container" ng-style="{'background':'linear-gradient( rgba(255, 61, 0, 0.4), rgba(255, 61, 0, 0.4) ), url('+image+')', 'background-size' : 'cover'}">
+    <img src='https://cdn.getyourguide.com/static/current/customer/desktop/cached/gyg-logo.svg'>
+    <header>
+      <span us-spinner></span>
+      <h1> {{ name }} {{ filler }} <br> {{ attraction }} </h1>
+    </header>
+  </div>
 </body>
 </html>

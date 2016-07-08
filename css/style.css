@@ -1,0 +1,77 @@
+/* ---- Responsive Grid ---- */
+.container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Vertical Align Main Content */
+  display: table;
+  height: 100vh;
+}
+
+.col {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .col {
+    padding-left: 0.9375em;
+    padding-right: 0.9375em;
+  }
+
+  .quarter.col {
+    width: 25%;
+  }
+
+  .third.col {
+    width: 33.3333333333%;
+  }
+
+  .half.col {
+    width: 50%;
+  }
+
+  .whole.col {
+    width: 100%;
+  }
+}
+
+/* --------- Reset --------- */
+
+div, h1, h2, h3, h4, h5, h6, p, ul, li, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: scroll;
+}
+
+/* --------- Reset --------- */
+
+header {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+}
+
+header h1 {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.container img {
+  position: absolute;
+  left: 50px;
+}
