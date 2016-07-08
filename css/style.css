@@ -75,3 +75,15 @@ header h1 {
   position: absolute;
   left: 50px;
 }
+
+#map {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  width: 200px;
+  height: 200px;
+}
+
+h1 .larger {
+  font-size: 50px;
+}

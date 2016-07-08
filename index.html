@@ -6,19 +6,21 @@
   <title>GYG Random User Viewer</title>
   <link href="https://fonts.googleapis.com/css?family=Galada|Lato" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJXtHoKXa7gVhcW1fzoUpS1kXVjLPk_Us"></script>
   <script src="js/lib/angular.min.js" type="text/javascript"></script>
-  <script src="js/lib/spin.min.js"></script>
   <script src="js/lib/angular-spinner.min.js"></script>
   <script src="js/lib/angular-loading-spinner.js"></script>
+  <script src="js/lib/spin.min.js"></script>
   <script src="js/app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="viewerController">
-  <div class="container" ng-style="{'background':'linear-gradient( rgba(255, 61, 0, 0.4), rgba(255, 61, 0, 0.4) ), url('+image+')', 'background-size' : 'cover'}">
+  <div class="container" ng-style="{'background':'linear-gradient( rgba(255, 61, 0, 0.3), rgba(255, 61, 0, 0.3) ), url('+image+')', 'background-size' : 'cover'}">
     <img src='https://cdn.getyourguide.com/static/current/customer/desktop/cached/gyg-logo.svg'>
     <header>
       <span us-spinner></span>
-      <h1> {{ name }} {{ filler }} <br> {{ attraction }} </h1>
+      <h1> <span class="larger"> {{ name }} </span> <br> {{ filler }} <br>  <span class="larger">{{ attraction }} </span> </h1>
     </header>
+    <div id="map"></div>
   </div>
 </body>
 </html>
