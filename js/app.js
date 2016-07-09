@@ -19,6 +19,10 @@ angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
     });
   };
 
+  $scope.setZoom = function() {
+    $scope.map.setZoom(15);
+  };
+
   $scope.getUserData = function() {
     $gygRandomUser.getRandomUser().then(
       function(res) {
@@ -35,10 +39,6 @@ angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
         console.log(error);
       }
     );
-  };
-
-  $scope.setZoom = function() {
-    $scope.map.setZoom(15);
   };
 
   $scope.getUserData();
