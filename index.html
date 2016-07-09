@@ -14,11 +14,15 @@
   <script src="js/app.js" type="text/javascript"></script>
 </head>
 <body ng-controller="viewerController">
-  <div class="container" ng-style="{'background':'linear-gradient( rgba(255, 61, 0, 0.3), rgba(255, 61, 0, 0.3) ), url('+image+')', 'background-size' : 'cover'}">
+  <div class="container" ng-style="{'background':'linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('+image+')', 'background-size' : 'cover'}">
     <img src='https://cdn.getyourguide.com/static/current/customer/desktop/cached/gyg-logo.svg'>
     <header>
       <span us-spinner></span>
-      <h1> <span class="larger"> {{ name }} </span> <br> {{ filler }} <br>  <span class="larger">{{ attraction }} </span> </h1>
+      <h1>
+        <span class="larger"> {{ name }} </span> <br>
+        {{ filler }} <br>
+        <span class="larger">{{ attraction }} </span>
+      </h1>
     </header>
     <div id="map"></div>
   </div>

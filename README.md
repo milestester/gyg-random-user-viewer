@@ -1,6 +1,6 @@
 # gyg-random-user-viewer
 
-Get Your Guide Random User Visualization Coding Challenge
+Get Your Guide Random User Visualization
 
 To start: <br>
 1. npm install <br>

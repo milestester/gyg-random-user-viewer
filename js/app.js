@@ -1,7 +1,7 @@
 angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
 
 .controller('viewerController', function($scope, $gygRandomUser, $interval) {
-  $scope.fillers = ['is enjoying', 'is loving'];
+  $scope.fillers = ['is enjoying', 'is loving', 'is appreciating', 'is being entertained by'];
 
   $scope.setupMap = function() {
     var lat = $scope.lat;
@@ -22,7 +22,6 @@ angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
   $scope.getUserData = function() {
     $gygRandomUser.getRandomUser().then(
       function(res) {
-          console.log(res);
           $scope.name = res.customerFirstName;
           $scope.filler = $scope.fillers[Math.floor(Math.random()*$scope.fillers.length)];
           $scope.attraction = res.activityTitle;
@@ -30,14 +29,20 @@ angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
           $scope.lat = res.activityCoordinateLatitude;
           $scope.long = res.activityCoordinateLongitude;
           $scope.setupMap();
+          $interval($scope.setZoom, 5000, 1);
       },
       function(error) {
         console.log(error);
       }
     );
   };
+
+  $scope.setZoom = function() {
+    $scope.map.setZoom(15);
+  };
+
   $scope.getUserData();
-  $interval($scope.getUserData, 60000);
+  $interval($scope.getUserData, 10000);
 })
 
 .factory('$gygRandomUser', function($http, $q) {
