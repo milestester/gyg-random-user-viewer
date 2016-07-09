@@ -46,25 +46,17 @@ angular.module('gygRandomUserViewerApp', ['ngLoadingSpinner'])
 })
 
 .factory('$gygRandomUser', function($http, $q) {
-  var payloadData = {};
   return {
     getRandomUser : function() {
       return $http.get("https://www.getyourguide.com/touring.json?key=2Gr0p7z96D").then(
         function(payload) {
-          payloadData = payload.data;
-          return payloadData;
+          return payload.data;
         },
         function(error) {
           return $q.reject(error);
         }
       );
-    },
-    getPayloadData : function () {
-      return payloadData;
     }
   }
-})
-
-.directive('activityContainer', function() {
-
 });
+
